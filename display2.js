@@ -208,7 +208,7 @@ function main()
 	http.createServer(function (req, res) {
 		create(req, res);
 		//res.end();
-	}).listen(PORT);
+	}).listen(port);
 
 //}
 // console.log(pdata['the_name']);
