@@ -2,7 +2,7 @@
   "name": "homework14",
   "version": "1.0.0",
   "description": "my hw14 node app",
-  "main": "sample.js",
+  "main": "display2.js",
   "scripts": {
   "start": "node display2.js"
 },
