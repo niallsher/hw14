@@ -107,14 +107,14 @@ async function parse1(pdata, res)
 				console.log("here");
 
 				console.log("Items: " + items.length);
-				// for (i=0; i<items.length; i++) {
-				// 	console.log(i + ": " + items[i].ticker);
-				// 	res.write(items[i].name + ", " + items[i].ticker + "<br/>");
-				// }
-				await items.forEach(function(thing) {
-					console.log(1 + ": " + thing.ticker);
+				for (i=0; i<items.length; i++) {
+					console.log(i + ": " + items[i].ticker);
 					res.write(items[i].name + ", " + items[i].ticker + "<br/>");
-				});
+				}
+				// items.forEach(function(thing) {
+				// 	console.log(1 + ": " + thing.ticker);
+				// 	res.write(items[i].name + ", " + items[i].ticker + "<br/>");
+				// });
 			}
 			// res.end();
 			// client.close();
