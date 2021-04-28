@@ -3,7 +3,8 @@
 var http = require('http');
 var fs = require('fs');
 var qs = require('querystring');
-var port = process.env.PORT || 3000;
+var port = process.env.MONGODB_URI || 3000;
+
 
 // var obj = require('./display_db.js');
 // var obj = require('./test.js');
@@ -163,7 +164,7 @@ function create(req, res)
 {
 	if (req.url == "/")
 	  {
-		  file = 'https://hw14-display.herokuapp.com/form.html';
+		  file = 'form.html';
 		  fs.readFile(file, function(err, txt) {
 		  res.writeHead(200, {'Content-Type': 'text/html'});
 		  res.write("This is the home page<br>");
