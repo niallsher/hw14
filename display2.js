@@ -122,7 +122,7 @@ async function parse1(pdata, res)
 
 		result2 = await collection.find(theQuery2);
 
-		await result2.toArray(function(err, items) {
+		result2.toArray(function(err, items) {
 
 			// find2(err, items, res, pdata, client);
 			console.log("pdata2:" + JSON.stringify(pdata));
@@ -139,6 +139,7 @@ async function parse1(pdata, res)
 					res.write(items[i].name + ", " + items[i].ticker + "<br/>");
 				}
 				res.end();
+				console.log("close please");
 				client.close();
 
 			}
@@ -205,10 +206,20 @@ function create(req, res)
 function main()
 {
 
-	http.createServer(function (req, res) {
+	httpServer = http.createServer(function (req, res) {
 		create(req, res);
 		//res.end();
 	}).listen(port);
+
+	httpServer.setTimeout(port, ()=>{
+  
+		 console.log("Socket is destroyed due to timeout")
+		  
+	    httpServer.close(()=>{
+	        console.log("Server is closed")
+	    })
+	})
+
 
 //}
 // console.log(pdata['the_name']);
