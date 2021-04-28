@@ -2,9 +2,9 @@
   "name": "homework14",
   "version": "1.0.0",
   "description": "my hw14 node app",
-  "main": "display2.js",
+  "main": "display_db.js",
   "scripts": {
-  "start": "node display2.js"
+  "start": "node display_db.js"
 },
   "repository": {
   "type": "git",
